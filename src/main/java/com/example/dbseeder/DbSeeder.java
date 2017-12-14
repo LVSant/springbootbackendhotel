@@ -1,21 +1,21 @@
 package com.example.dbseeder;
 
-import com.example.dao.HotelRepository;
 import com.example.model.Address;
 import com.example.model.Hotel;
 import com.example.model.Review;
 import java.util.Arrays;
 import java.util.List;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DbSeeder implements CommandLineRunner {
 
-    private HotelRepository repository;
+    private final MongoTemplate hotelTemplate;
 
-    public DbSeeder(HotelRepository hotelRepository) {
-        this.repository = hotelRepository;
+    public DbSeeder(MongoTemplate hotelTemplate) {
+        this.hotelTemplate = hotelTemplate;
     }
 
     @Override
@@ -24,11 +24,11 @@ public class DbSeeder implements CommandLineRunner {
         Hotel hotelOne = new Hotel("Teste Hotel 1", 25, new Address("New York", "USA"), Arrays.asList(new Review("User 1", 10, true)));
         Hotel hotelTwo = new Hotel("Teste Hotel 2", 425, new Address("Denver", "USA"), Arrays.asList(new Review("User 2", 70, false)));
 
-        this.repository.deleteAll();
+        this.hotelTemplate.dropCollection("hotels");
 
         List<Hotel> toAddHotels = Arrays.asList(hotelOne, hotelTwo);
 
-        this.repository.save(toAddHotels);
+        this.hotelTemplate.insertAll(toAddHotels);
 
     }
 }
