@@ -1,0 +1,7 @@
+com/example/model/Review.class
+com/example/controller/HotelController.class
+com/example/demo/SpringBootHotelApplication.class
+com/example/model/Hotel.class
+com/example/model/Address.class
+com/example/dbseeder/DbSeeder.class
+com/example/dao/HotelRepository.class

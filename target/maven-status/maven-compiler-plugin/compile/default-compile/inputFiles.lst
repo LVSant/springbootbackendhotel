@@ -1,0 +1,7 @@
+/home/devl/dev/SpringBootHotel/src/main/java/com/example/demo/SpringBootHotelApplication.java
+/home/devl/dev/SpringBootHotel/src/main/java/com/example/controller/HotelController.java
+/home/devl/dev/SpringBootHotel/src/main/java/com/example/dbseeder/DbSeeder.java
+/home/devl/dev/SpringBootHotel/src/main/java/com/example/model/Address.java
+/home/devl/dev/SpringBootHotel/src/main/java/com/example/dao/HotelRepository.java
+/home/devl/dev/SpringBootHotel/src/main/java/com/example/model/Review.java
+/home/devl/dev/SpringBootHotel/src/main/java/com/example/model/Hotel.java
