@@ -23,10 +23,11 @@ public class DbSeeder implements CommandLineRunner {
 
         Hotel hotelOne = new Hotel("Teste Hotel 1", 25, new Address("New York", "USA"), Arrays.asList(new Review("User 1", 10, true)));
         Hotel hotelTwo = new Hotel("Teste Hotel 2", 425, new Address("Denver", "USA"), Arrays.asList(new Review("User 2", 70, false)));
+        Hotel hotelThree = new Hotel("Teste Hotel 3", 425, new Address("Amsterdam", "NL"), Arrays.asList(new Review("User 3", 42, false)));
 
         this.hotelTemplate.dropCollection("hotels");
 
-        List<Hotel> toAddHotels = Arrays.asList(hotelOne, hotelTwo);
+        List<Hotel> toAddHotels = Arrays.asList(hotelOne, hotelTwo, hotelThree);
 
         this.hotelTemplate.insertAll(toAddHotels);
 
