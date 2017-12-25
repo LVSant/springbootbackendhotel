@@ -1,10 +1,12 @@
 package com.example.demo.controller;
 
 import com.example.demo.dao.HotelRepository;
-import com.example.model.Hotel;
+import com.example.demo.model.Hotel;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -18,11 +20,15 @@ public class HotelController {
         this.repository = repository;
     }
 
-    @RequestMapping("/all")
+    @RequestMapping(value = "/all", method = RequestMethod.GET, produces = "application/json")
     public List<Hotel> getAll() {
         List<Hotel> hotels = repository.findAll();
-        hotels.add(new Hotel("hardcoded test", 0, null, null));
         return hotels;
     }
 
+    @RequestMapping(method = RequestMethod.POST, consumes = "application/json")
+    public void newHotel(@RequestBody Hotel hotel) {
+        System.out.println("new hotel:\n" + hotel.toString());
+        repository.save(hotel);
+    }
 }
