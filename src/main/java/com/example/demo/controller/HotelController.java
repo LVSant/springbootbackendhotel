@@ -28,7 +28,7 @@ public class HotelController {
 
     @RequestMapping(method = RequestMethod.POST, consumes = "application/json")
     public void newHotel(@RequestBody Hotel hotel) {
-        System.out.println("new hotel:\n" + hotel.toString());
+        hotel.setId(null); //a new hotel must have null ID so MongoDB creates one
         repository.save(hotel);
     }
 }
