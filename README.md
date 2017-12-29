@@ -8,7 +8,8 @@
 | Method | **Route** | **Description** |
 |--------|-------|-------------|
 | GET  | [[hotels/all](https://springbootbackendhotel.herokuapp.com/hotels/all)] | Return all created hotels |
-| POST | [[hotels](https://springbootbackendhotel.herokuapp.com/hotels/)] | Create a new Hotel, with JSON Object with nested objects Address and Comments as described [here](#required-fields-for-creating-a-hotel) |
+| GET  | [[hotels/{hotelId}](https://springbootbackendhotel.herokuapp.com/hotels/)] | Return the hotel that matches the given Id |
+| POST | [[hotels](https://springbootbackendhotel.herokuapp.com/hotels/)] | Create a new Hotel, with JSON Object with nested objects Address and Reviews as described [here](#required-fields-for-creating-a-hotel) |
 
 
 
